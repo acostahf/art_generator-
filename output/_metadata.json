@@ -1,0 +1,13 @@
+[
+  {
+    "hash": "112131",
+    "decodedHash": [{ "1": 1 }, { "2": 1 }, { "3": 1 }],
+    "edition": 1,
+    "date": 1631043583549,
+    "attributes": [
+      { "id": 1, "layer": "shape", "name": "circle", "rarity": "original" },
+      { "id": 1, "layer": "mouth", "name": "mouth", "rarity": "original" },
+      { "id": 1, "layer": "eyes", "name": "purple-eyes", "rarity": "original" }
+    ]
+  }
+]

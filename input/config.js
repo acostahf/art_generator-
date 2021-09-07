@@ -60,7 +60,7 @@ const layers = [
     size: { width: width, height: height },
   },
   {
-    id: 1,
+    id: 2,
     name: "mouth",
     location: `${dir}/mouth/`,
     elements: getElements(`${dir}/mouth/`),
@@ -68,7 +68,7 @@ const layers = [
     size: { width: width, height: height },
   },
   {
-    id: 1,
+    id: 3,
     name: "eyes",
     location: `${dir}/eyes/`,
     elements: getElements(`${dir}/eyes/`),
