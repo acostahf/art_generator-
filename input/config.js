@@ -52,32 +52,24 @@ const getElements = (path) => {
 
 const layers = [
   {
-    id: 4,
-    name: "background",
     location: `${dir}/background/`,
     elements: getElements(`${dir}/background/`),
     position: { x: 0, y: 0 },
     size: { width: width, height: height },
   },
   {
-    id: 0,
-    name: "shape",
     location: `${dir}/shape/`,
     elements: getElements(`${dir}/shape/`),
     position: { x: 0, y: 0 },
     size: { width: width, height: height },
   },
   {
-    id: 2,
-    name: "mouth",
     location: `${dir}/mouth/`,
     elements: getElements(`${dir}/mouth/`),
     position: { x: 0, y: 0 },
     size: { width: width, height: height },
   },
   {
-    id: 3,
-    name: "eyes",
     location: `${dir}/eyes/`,
     elements: getElements(`${dir}/eyes/`),
     position: { x: 0, y: 0 },
