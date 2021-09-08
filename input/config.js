@@ -52,7 +52,15 @@ const getElements = (path) => {
 
 const layers = [
   {
-    id: 1,
+    id: 4,
+    name: "background",
+    location: `${dir}/background/`,
+    elements: getElements(`${dir}/background/`),
+    position: { x: 0, y: 0 },
+    size: { width: width, height: height },
+  },
+  {
+    id: 0,
     name: "shape",
     location: `${dir}/shape/`,
     elements: getElements(`${dir}/shape/`),

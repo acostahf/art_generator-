@@ -5,11 +5,12 @@ const { layers, width, height } = require("./input/config.js");
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
 // number of artworks that are going to be created
-const edition = myArgs.length > 0 ? Number(myArgs[0]) : 1;
+const editionSize = myArgs.length > 0 ? Number(myArgs[0]) : 1;
 var metadata = [];
 var attributes = [];
 var hash = [];
 var decodedHash = [];
+var dnaList = [];
 
 // function to save the image
 const saveLayer = (_canvas, _edition) => {
@@ -69,17 +70,44 @@ const drawLayer = async (_layer, _edition) => {
   saveLayer(canvas, _edition);
 };
 
-// loops the edtions
-for (let i = 1; i <= edition; i++) {
-  // for each edition draw a image
-  layers.forEach((layer) => {
-    drawLayer(layer, i);
-  });
-  addMetadata(i);
-  console.log("creating edition " + i);
-}
+const isDnaUnique = (_DnaList = [], _dna) => {
+  // true or false will be return, if its not unique it is false
+  let foundDna = _DnaList.find((i) => i === _dna);
+  return foundDna == undefined ? true : false;
+};
 
-fs.readFile("./output/_metadata.json", (err, data) => {
-  if (err) throw err;
+const createDna = (_len) => {
+  let randNum = Math.floor(
+    Number(`1e${_len}`) + Math.random() * Number(`9e${_len}`)
+  );
+  return randNum;
+};
+
+const writeMetaData = () => {
   fs.writeFileSync("./output/_metadata.json", JSON.stringify(metadata));
-});
+};
+
+// this is where the miniting takes place
+const startCreating = () => {
+  let editionCount = 1;
+  // loops the edtions
+  while (editionCount <= editionSize) {
+    let newDna = createDna(layers.length * 2 - 1);
+    console.log(`${newDna}`);
+    if ((isDnaUnique(dnaList), newDna)) {
+      // for each edition draw a image
+      layers.forEach((layer) => {
+        drawLayer(layer, i);
+      });
+      // addMetadata(i);
+      // console.log("creating edition " + i);
+      dnaList.push(newDna);
+      editionCount++;
+    } else {
+      console.log("DNA exists");
+    }
+  }
+};
+
+startCreating();
+writeMetaData();
